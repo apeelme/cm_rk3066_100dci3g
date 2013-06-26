@@ -52,7 +52,7 @@ BOARD_HAS_LARGE_FILESYSTEM := true
 BOARD_EGL_CFG := $(LOCAL_PATH)/egl.cfg
 USE_OPENGL_RENDERER := true
 ENABLE_WEBGL := true
-DEVICE_RESOLUTION := 1024x768
+DEVICE_RESOLUTION := 1280x800
 TARGET_HAVE_HDMI_OUT := true
 
 
@@ -100,14 +100,15 @@ BOARD_HAVE_BLUETOOTH := true
 
 # recovery
 TARGET_RECOVERY_INITRC := $(LOCAL_PATH)/recovery.init.rc
-BOARD_CUSTOM_RECOVERY_KEYMAPPING := $(LOCAL_PATH)/recovery_keys.c
-BOARD_UMS_LUNFILE := "/sys/devices/platform/usb20_otg/gadget/lun0/file"
+#BOARD_CUSTOM_RECOVERY_KEYMAPPING := $(LOCAL_PATH)/recovery_keys.c
+BOARD_UMS_LUNFILE := "/sys/devices/platform/usb20_otg/gadget/lun1/file"
 BOARD_NO_RGBX_8888 := true
-BOARD_UMS_2ND_LUNFILE := "/sys/devices/platform/usb20_otg/gadget/lun1/file"
+#BOARD_UMS_2ND_LUNFILE := "/sys/devices/platform/usb20_otg/gadget/lun1/file"
 BOARD_HAS_NO_SELECT_BUTTON := true
 
-TARGET_RECOVERY_PRE_COMMAND := "echo -n boot-recovery | busybox dd of=/dev/block/mtd/by-name/misc count=1 conv=sync; sync"
+#TARGET_RECOVERY_PRE_COMMAND := "echo -n boot-recovery | busybox dd of=/dev/block/mtd/by-name/misc count=1 conv=sync; sync"
 # TWRP
+TW_NO_REBOOT_BOOTLOADER := true
 TARGET_RECOVERY_PIXEL_FORMAT := "RGB_565"
 TW_DEFAULT_EXTERNAL_STORAGE := true
 TW_INTERNAL_STORAGE_PATH := "/sdcard"
